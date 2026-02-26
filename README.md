@@ -64,7 +64,7 @@ No explaining. No teaching. Just ask.
 ## What You Need
 
 - **Figma Desktop** (free account works)
-- **Claude Code** ([get it here](https://claude.ai/download))
+- **Claude Code** ([get it here](https://www.anthropic.com/claude-code))
 
 ---
 
@@ -212,12 +212,12 @@ ps aux | grep -i figma
 killall Figma
 ```
 
-**3. Run init again**
+**3. Run connect again**
 ```bash
-node src/index.js init
+node src/index.js connect
 ```
 
-If still failing, try with sudo: `sudo node src/index.js init`
+If still failing, try with sudo: `sudo node src/index.js connect`
 
 **4. Manual patch (last resort)**
 
@@ -240,13 +240,13 @@ sudo codesign --force --deep --sign - /Applications/Figma.app
 
 ### Windows Permission Error
 
-Run Command Prompt or PowerShell as Administrator, then run `node src/index.js init`.
+Run Command Prompt or PowerShell as Administrator, then run `node src/index.js connect`.
 
 ### Figma Not Connecting
 
 1. Make sure Figma Desktop is running (not the web version)
-2. Check if port 9222 is available: `lsof -i :9222`
-3. Restart Figma: `node src/index.js connect`
+2. Open a design file in Figma (not just the home screen)
+3. Restart connection: `node src/index.js connect`
 
 ---
 
