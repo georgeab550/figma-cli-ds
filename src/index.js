@@ -1092,6 +1092,10 @@ const colorVars = await figma.variables.getLocalVariablesAsync('COLOR');
 const targetCols = ${collection ? `collections.filter(c => c.name.toLowerCase().includes('${collection}'.toLowerCase()))` : 'collections'};
 if (targetCols.length === 0) return 'No collections found';
 
+// Skip semantic collections (they're aliases, colors already shown in primitives)
+const filteredCols = targetCols.filter(c => !c.name.toLowerCase().includes('semantic'));
+if (filteredCols.length === 0) return 'No color collections found (only semantic)';
+
 let startX = 0;
 figma.currentPage.children.forEach(n => {
   startX = Math.max(startX, n.x + (n.width || 0));
@@ -1103,7 +1107,7 @@ let totalSwatches = 0;
 // shadcn color order
 const colorOrder = ['slate','gray','zinc','neutral','stone','red','orange','amber','yellow','lime','green','emerald','teal','cyan','sky','blue','indigo','violet','purple','fuchsia','pink','rose','white','black'];
 
-for (const col of targetCols) {
+for (const col of filteredCols) {
   const colVars = colorVars.filter(v => v.variableCollectionId === col.id);
   if (colVars.length === 0) continue;
 
@@ -1251,7 +1255,7 @@ for (const col of targetCols) {
   startX += container.width + 60;
 }
 
-figma.viewport.scrollAndZoomIntoView(figma.currentPage.children.slice(-targetCols.length));
+figma.viewport.scrollAndZoomIntoView(figma.currentPage.children.slice(-filteredCols.length));
 return 'Created ' + totalSwatches + ' color swatches';
 })()`;
 
