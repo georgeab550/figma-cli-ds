@@ -54,6 +54,7 @@ This project includes a `CLAUDE.md` file that Claude reads automatically. It con
 - **Figma Desktop** (free account works)
 - **Claude Code** ([get it here](https://www.anthropic.com/claude-code))
 - **Node.js** (v18 or later)
+- **macOS or Windows** (macOS recommended, Windows supported)
 
 ---
 
@@ -225,9 +226,15 @@ sudo sed -i '' 's/remote-debugging-port/remote-debugXing-port/g' /Applications/F
 sudo codesign --force --deep --sign - /Applications/Figma.app
 ```
 
-### Windows Permission Error
+### Windows
 
-Run Command Prompt or PowerShell as Administrator, then run `node src/index.js connect`.
+Windows is supported but less tested than macOS.
+
+**Permission Error:** Run Command Prompt or PowerShell as Administrator, then run `node src/index.js connect`.
+
+**Figma Location:** The CLI expects Figma at `%LOCALAPPDATA%\Figma\Figma.exe` (default install location).
+
+**Safe Mode:** If Yolo Mode doesn't work, use Safe Mode: `node src/index.js connect --safe`
 
 ### Figma Not Connecting
 
