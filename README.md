@@ -435,7 +435,7 @@ Components resolve in priority order: team library → local → alias → fuzzy
 
 ## Author
 
-Forked and maintained by **George Pago** — [github.com/georgepago](https://github.com/georgepago)
+Forked and maintained by **George AB** — [github.com/georgeab550](https://github.com/georgeab550)
 
 Originally created by **[Sil Bormüller](https://www.linkedin.com/in/silbormueller/)** — [intodesignsystems.com](https://intodesignsystems.com)
 
