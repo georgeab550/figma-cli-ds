@@ -71,7 +71,7 @@ This project ships with an AI instruction file that teaches any coding assistant
 ### 1. Clone & Open
 
 ```bash
-git clone https://github.com/georgepago/figma-cli-ds.git
+git clone https://github.com/georgeab550/figma-cli-ds.git
 cd figma-cli-ds
 npm install
 ```
